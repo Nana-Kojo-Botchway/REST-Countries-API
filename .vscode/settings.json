@@ -1,0 +1,6 @@
+{
+    "javascript.format.semicolons": "remove",
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    }
+}
