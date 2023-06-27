@@ -4,7 +4,7 @@ const Search = () => {
     return (
         <section className='filter'>
             <form className="form-control">
-                <input type="search" name="search" id="search" placeholder='Search for a country' />
+                <input type="search" name="search" id="search" placeholder='Search Country' />
             </form>
 
             <div className='filter-region'>

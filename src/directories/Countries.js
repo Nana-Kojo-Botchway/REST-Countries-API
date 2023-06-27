@@ -1,19 +1,26 @@
 import React, { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 
 const url = "https://restcountries.com/v2/all"
 
 const Countries = () => {
     const [countries, setCountries] = useState([])
 
-    const fetchCountryData = async () => {
-        const response = await fetch(url)
-        const countries = await response.json()
-        setCountries(countries)
-        console.log(countries)
-    }
     useEffect(() => {
+        const fetchCountryData = async () => {
+            const response = await fetch(url)
+            const countries = await response.json()
+            setCountries(countries)
+            console.log(countries)
+        }
+
         fetchCountryData()
     }, [])
+
+    const removeCountry = (numericCode) => {
+        const newCountry = countries.filter((country) => country.numericCode !== numericCode)
+        setCountries(newCountry)
+    }
 
     return (
         <>
@@ -23,10 +30,13 @@ const Countries = () => {
 
                     return (
                         <article key={numericCode}>
-                            <div>
+                            <div className="flag">
                                 <img src={flag} alt={name} />
-                                <div className="info">
-                                <h3>{name}</h3>
+                            </div>
+                            <div className="info">
+                                <h4>
+                                    Name: <span>{name}</span>
+                                </h4>
                                 <h4>
                                     Populaion: <span>{population}</span>
                                 </h4>
@@ -36,6 +46,9 @@ const Countries = () => {
                                 <h4>
                                     Capital: <span>{capital}</span>
                                 </h4>
+                                <div className="toggle">
+                                <Link to={`/countries/${name}`} className="btn">Learn more </Link>
+                                <button className="btn" onClick={() => removeCountry(numericCode)}>Remove Country</button>
                                 </div>
                             </div>
                         </article>
