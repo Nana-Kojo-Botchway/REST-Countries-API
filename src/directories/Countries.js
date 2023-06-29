@@ -11,7 +11,6 @@ const Countries = () => {
             const response = await fetch(url)
             const countries = await response.json()
             setCountries(countries)
-            console.log(countries)
         }
 
         fetchCountryData()
@@ -47,7 +46,7 @@ const Countries = () => {
                                     Capital: <span>{capital}</span>
                                 </h4>
                                 <div className="toggle">
-                                <Link to={`/countries/${name}`} className="btn">Learn more </Link>
+                                <Link to={`/countries/${encodeURIComponent(name)}`} className="btn">Learn more</Link>
                                 <button className="btn" onClick={() => removeCountry(numericCode)}>Remove Country</button>
                                 </div>
                             </div>

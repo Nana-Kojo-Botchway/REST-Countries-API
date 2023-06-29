@@ -36,6 +36,10 @@ img {
   cursor: pointer;
 }
 
+.btn-light {
+  background-color: var(--article-color);
+}
+
 .btn:hover {
   background-color: var(--text-color);
   color: var(--dark-bg-color);

@@ -1,5 +1,6 @@
 import React from "react"
-import { BrowserRouter as Router, Route } from "react-router-dom"
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import Header from "./directories/Header"
 import Search from "./directories/Search"
 import Countries from "./directories/Countries"
@@ -9,13 +10,22 @@ function App() {
   return (
     <Router>
       <Header />
-      <Route exact path="/">
-        <Search />
-        <Countries />
-      </Route>
-      <Route path="/countries/:name" children={<Country />}></Route>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/countries" element={<Countries />} />
+        <Route path="/countries/:name" element={<Country />} />
+      </Routes>
     </Router>
-  )
+  );
+}
+
+function Home() {
+  return (
+    <>
+      <Search />
+      <Countries />
+    </>
+  );
 }
 
 export default App
