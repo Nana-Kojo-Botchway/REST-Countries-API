@@ -33,7 +33,7 @@ const Country = () => {
                     const { numericCode, flag, name, nativeName, population, region, subregion, capital, topLevelDomain, currencies, languages, borders } = c
                     return (
                         <article key={numericCode}>
-                            <div className="country-inner">
+                            <div className="more-details">
                                 <div className="flag">
                                     <img src={flag} alt={name} />
                                 </div>
@@ -49,11 +49,13 @@ const Country = () => {
                                     </div>
 
                                     <div>
-                                        <h5>Top Level Domain: {topLevelDomain}</h5>
-                                        <h5>Currencies: {currencies[0].name}</h5>
-                                        <h5>Languages: {languages[0].name}</h5>
+                                        <h5>Top Level Domain: <span>{topLevelDomain}</span></h5>
+                                        <h5>Currencies: <span>{currencies[0].name}</span></h5>
+                                        <h5>Languages: <span>{languages[0].name}</span></h5>
                                     </div>
-                            <div>
+                                </div>
+                            </div>
+                            <div className='class-borders'>
                                 <p>Border Countries: <div className="borders">
                                     {borders && borders.length > 0 ? (
                                         borders.map((border) => (
@@ -65,8 +67,6 @@ const Country = () => {
                                         <p>No border countries available.</p>
                                     )}
                                 </div> </p>
-                            </div>
-                                </div>
                             </div>
 
 
