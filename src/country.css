@@ -11,9 +11,10 @@
     margin: 30px 0;
 }
 
-.country-name h2 {
+.country-info h2 {
     font-size: 30px;
     letter-spacing: 1px;
+    margin-top: 30px;
 }
 
 .country article .country-info div h5 {
@@ -32,12 +33,12 @@
     font-weight: 600;
 }
 
-.country article .borders {
+.borders {
     display: inline-flex;
     flex-wrap: wrap;
 }
 
-.country article .borders ul {
+ .borders ul {
     margin: 10px;
     background-color: var(--article-color);
     border: 3px;
@@ -45,18 +46,41 @@
     box-shadow: 0 5px 20px hsla(200, 15%, 8%, 0.5);
 }
 
-@media (min-width: 992px) {
-    .country article .more-details {
-        display: flex;
-      }
+.borders ul.light-mode {
+  background-color: var(--light-mode-bg);
+}
 
-      .country article .more-details img {
+@media (min-width: 992px) {
+  .country {
+    padding-left: 5px;
+}
+
+  .country article .country-info div {
+    margin: 2px 0;
+    }
+
+  .more-details {
+        display: flex;
+    }
+
+      .more-details img {
         width: 80vh;
     }
     
-      .country .country-info {
+      .country-info {
+        width: 50%;
+        margin-left: 40px;
+      }
+
+      .country-info h2 {
+        margin: 10px 0;
+        letter-spacing: 1px;
+        font-size: 40px;
+      }
+
+      .modalInfo {
         display: flex;
-        padding-left: 40px;
+        justify-content: space-between;
       }
 
       .btn-light {
@@ -71,7 +95,7 @@
       }
 
       .btn-light {
-        margin-left: 130px;
+        margin-left: 85px;
         }
     }
     

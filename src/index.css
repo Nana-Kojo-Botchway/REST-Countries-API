@@ -17,6 +17,8 @@
 
 img {
   max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
 }
 
 ul {
@@ -154,6 +156,11 @@ header.light-mode {
   padding: 20px;
   color: var(--text-color);
   transition: background-color 0.4s;
+}
+
+.grid .info.light-theme {
+  background-color: var(--light-mode-bg);
+  color: var(--light-mode-text);
 }
 
 .grid .info h4 {

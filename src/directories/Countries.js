@@ -33,13 +33,13 @@ const Countries = () => {
                                 <img src={flag} alt={name} />
                             </div>
                             <div className="info">
-                                <h4>
+                                <h4 className="country-name">
                                     Name: <span>{name}</span>
                                 </h4>
                                 <h4>
-                                    Populaion: <span>{population}</span>
+                                    Populaion: <span>{population.toLocaleString()}</span>
                                 </h4>
-                                <h4>
+                                <h4 className="country-region">
                                     Region: <span>{region}</span>
                                 </h4>
                                 <h4>

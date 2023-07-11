@@ -13,14 +13,13 @@ const Country = () => {
             )
             const country = await response.json()
             setCountry(country)
-            console.log(country)
         }
 
         fetchCountryData()
     }, [name])
 
     if (!country) {
-        return null // Return a loader or loading state while fetching data
+        return null
     }
 
     return (
@@ -33,28 +32,29 @@ const Country = () => {
                     const { numericCode, flag, name, nativeName, population, region, subregion, capital, topLevelDomain, currencies, languages, borders } = c
                     return (
                         <article key={numericCode}>
+
                             <div className="more-details">
                                 <div className="flag">
                                     <img src={flag} alt={name} />
                                 </div>
 
                                 <div className="country-info">
-                                    <div>
                                         <h2>{name}</h2>
+                                    <div className="modalInfo">
+                                    <div className='innerLeft inner'>
                                         <h5>Native Name: <span>{nativeName}</span></h5>
-                                        <h5>Population: <span>{population}</span></h5>
+                                        <h5>Population: <span>{population.toLocaleString()}</span></h5>
                                         <h5>Region: <span>{region}</span></h5>
                                         <h5>Sub Region: <span>{subregion}</span></h5>
                                         <h5>Capital: <span>{capital}</span></h5>
                                     </div>
 
-                                    <div>
+                                    <div className='innerRight innert'>
                                         <h5>Top Level Domain: <span>{topLevelDomain}</span></h5>
                                         <h5>Currencies: <span>{currencies[0].name}</span></h5>
                                         <h5>Languages: <span>{languages[0].name}</span></h5>
                                     </div>
-                                </div>
-                            </div>
+                                    </div>
                             <div className='class-borders'>
                                 <p>Border Countries: <div className="borders">
                                     {borders && borders.length > 0 ? (
@@ -68,10 +68,7 @@ const Country = () => {
                                     )}
                                 </div> </p>
                             </div>
-
-
-
-                            <div>
+                                </div>
                             </div>
                         </article>
                     )

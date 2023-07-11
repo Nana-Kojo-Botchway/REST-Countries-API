@@ -27,7 +27,7 @@ const Header = () => {
                 </div>
 
                 <div>
-                    <i className='fas fa-moon'></i> Dark Mode
+                    <i className='fas fa-moon'></i>
                 </div>
             </header>
         </>
