@@ -8,8 +8,8 @@
     padding: 8px 20px;
 }
 
- .btn-light.light-mode {
-  background-color: var(--light-mode-bg);
+ .btn-light.dark-mode {
+  background-color: #2B3743;
   color: var(--light-mode-text);
 }
 
@@ -49,7 +49,7 @@
     /* background-color: var(--article-color); */
     border: 3px;
     padding: 3px 20px;
-    box-shadow: 0 5px 20px hsla(200, 10%, 6%, 0.5);
+    box-shadow: 0 5px 10px hsla(200, 10%, 6%, 0.5);
 }
 
 .borders ul.light-mode {

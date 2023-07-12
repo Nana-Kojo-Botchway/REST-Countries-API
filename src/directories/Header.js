@@ -1,63 +1,63 @@
 import React, { useState, useEffect } from 'react';
 
 const Header = () => {
-  const [lightMode, setLightMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    const storedLightMode = localStorage.getItem('lightMode');
-    if (storedLightMode) {
-      setLightMode(JSON.parse(storedLightMode));
+    const storedDarkMode = localStorage.getItem('darkMode');
+    if (storedDarkMode) {
+      setDarkMode(JSON.parse(storedDarkMode));
     }
   }, []);
 
   useEffect(() => {
-    applyLightMode(lightMode);
-  }, [lightMode]);
+    applyDarkMode(darkMode);
+  }, [darkMode]);
 
-  const applyLightMode = (mode) => {
-    // Toggle light mode for document.body
-    document.body.classList.toggle('light-mode', mode);
+  const applyDarkMode = (mode) => {
+    // Toggle dark mode for document.body
+    document.body.classList.toggle('dark-mode', mode);
 
-    // Toggle light mode for search input
+    // Toggle dark mode for search input
     const searchInput = document.getElementById('search');
     if (searchInput) {
-      searchInput.classList.toggle('light-mode', mode);
+      searchInput.classList.toggle('dark-mode', mode);
     }
 
-    // Toggle light mode for select element
+    // Toggle dark mode for select element
     const selectElement = document.querySelector('.select');
     if (selectElement) {
-      selectElement.classList.toggle('light-mode', mode);
+      selectElement.classList.toggle('dark-mode', mode);
     }
 
-    // Toggle light mode for elements with className="info"
+    // Toggle dark mode for elements with className="info"
     const infoElements = document.querySelectorAll('.info');
     infoElements.forEach((element) => {
-      element.classList.toggle('light-mode', mode);
+      element.classList.toggle('dark-mode', mode);
     });
 
-    // Toggle light mode for elements with className="btn-light"
+    // Toggle dark mode for elements with className="btn-light"
     const btnLightElements = document.querySelectorAll('.btn-light');
     btnLightElements.forEach((element) => {
-      element.classList.toggle('light-mode', mode);
+      element.classList.toggle('dark-mode', mode);
     });
   };
 
-  const toggleLightMode = () => {
-    const newLightMode = !lightMode;
-    setLightMode(newLightMode);
-    localStorage.setItem('lightMode', JSON.stringify(newLightMode));
+  const toggleDarkMode = () => {
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    localStorage.setItem('darkMode', JSON.stringify(newDarkMode));
   };
 
   return (
     <>
-      <header className={`header ${lightMode ? 'light-mode' : ''}`} onClick={toggleLightMode}>
+      <header className={`header ${darkMode ? 'dark-mode' : ''}`} onClick={toggleDarkMode}>
         <div>
           <p>Where in the world?</p>
         </div>
 
         <div>
-          <i className={`fas fa-moon ${lightMode ? 'light-mode' : ''}`}></i> Light Mode
+          <i className={`fas fa-moon ${darkMode ? 'dark-mode' : ''}`}></i> Dark Mode
         </div>
       </header>
     </>

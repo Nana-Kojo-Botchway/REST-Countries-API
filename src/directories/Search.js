@@ -52,7 +52,7 @@ const Search = () => {
 
             <div className="filter-region">
                 <select name="select" id="select" className="select">
-                    <option value="Filter by region">Filter by region</option>
+                    <option value="Filter by region">All</option>
                     <option value="Africa">Africa</option>
                     <option value="America">America</option>
                     <option value="Asia">Asia</option>
