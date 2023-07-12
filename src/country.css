@@ -5,6 +5,7 @@
 .btn-light {
     margin: 50px 0 0 50px;
     display: inline-block;
+    padding: 8px 20px;
 }
 
  .btn-light.light-mode {
@@ -45,10 +46,10 @@
 
  .borders ul {
     margin: 10px;
-    background-color: var(--article-color);
+    /* background-color: var(--article-color); */
     border: 3px;
     padding: 3px 20px;
-    box-shadow: 0 5px 20px hsla(200, 15%, 8%, 0.5);
+    box-shadow: 0 5px 20px hsla(200, 10%, 6%, 0.5);
 }
 
 .borders ul.light-mode {

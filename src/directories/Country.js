@@ -25,7 +25,7 @@ const Country = () => {
     return (
         <>
             <Link to="/" className='btn btn-light'>
-                <i className='fas fa-arrow-left'></i> Back Home
+                <i className='fas fa-arrow-left'></i> Back
             </Link>
             <section className="country">
                 {country.map((c) => {
@@ -55,8 +55,9 @@ const Country = () => {
                                         <h5>Languages: <span>{languages[0].name}</span></h5>
                                     </div>
                                     </div>
+
                             <div className='class-borders'>
-                                <p>Border Countries: <div className="borders">
+                                <h5>Border Countries: <div className="borders">
                                     {borders && borders.length > 0 ? (
                                         borders.map((border) => (
                                             <ul id='border' key={border}>
@@ -66,7 +67,7 @@ const Country = () => {
                                     ) : (
                                         <p>No border countries available.</p>
                                     )}
-                                </div> </p>
+                                </div> </h5>
                             </div>
                                 </div>
                             </div>

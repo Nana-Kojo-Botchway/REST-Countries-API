@@ -1,38 +1,63 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Header = () => {
-  const changeMode = () => {
-    const header = document.querySelector('.header');
-    const input = document.querySelector('#search');
-    const select = document.querySelector('select');
-    const info = document.querySelectorAll('.info');
+  const [lightMode, setLightMode] = useState(false);
 
-    document.body.classList.toggle('light-mode');
-    header.classList.toggle('light-mode');
-    input.classList.toggle('light-mode');
-    select.classList.toggle('light-mode');
+  useEffect(() => {
+    const storedLightMode = localStorage.getItem('lightMode');
+    if (storedLightMode) {
+      setLightMode(JSON.parse(storedLightMode));
+    }
+  }, []);
 
-    info.forEach((info) => {
-      info.classList.toggle('light-mode');
+  useEffect(() => {
+    applyLightMode(lightMode);
+  }, [lightMode]);
+
+  const applyLightMode = (mode) => {
+    // Toggle light mode for document.body
+    document.body.classList.toggle('light-mode', mode);
+
+    // Toggle light mode for search input
+    const searchInput = document.getElementById('search');
+    if (searchInput) {
+      searchInput.classList.toggle('light-mode', mode);
+    }
+
+    // Toggle light mode for select element
+    const selectElement = document.querySelector('.select');
+    if (selectElement) {
+      selectElement.classList.toggle('light-mode', mode);
+    }
+
+    // Toggle light mode for elements with className="info"
+    const infoElements = document.querySelectorAll('.info');
+    infoElements.forEach((element) => {
+      element.classList.toggle('light-mode', mode);
+    });
+
+    // Toggle light mode for elements with className="btn-light"
+    const btnLightElements = document.querySelectorAll('.btn-light');
+    btnLightElements.forEach((element) => {
+      element.classList.toggle('light-mode', mode);
     });
   };
 
-  const handleClick = (e) => {
-    const target = e.target;
-    if (target.classList.contains('fa-moon')) {
-      changeMode();
-    }
+  const toggleLightMode = () => {
+    const newLightMode = !lightMode;
+    setLightMode(newLightMode);
+    localStorage.setItem('lightMode', JSON.stringify(newLightMode));
   };
 
   return (
     <>
-      <header className="header" onClick={handleClick}>
+      <header className={`header ${lightMode ? 'light-mode' : ''}`} onClick={toggleLightMode}>
         <div>
           <p>Where in the world?</p>
         </div>
 
         <div>
-          <i className="fas fa-moon"></i>
+          <i className={`fas fa-moon ${lightMode ? 'light-mode' : ''}`}></i> Light Mode
         </div>
       </header>
     </>
