@@ -49,7 +49,7 @@ const Country = () => {
                                         <h5>Capital: <span>{capital}</span></h5>
                                     </div>
 
-                                    <div className='innerRight innert'>
+                                    <div className='innerRight inner'>
                                         <h5>Top Level Domain: <span>{topLevelDomain}</span></h5>
                                         <h5>Currencies: <span>{currencies[0].name}</span></h5>
                                         <h5>Languages: <span>{languages[0].name}</span></h5>
@@ -59,7 +59,7 @@ const Country = () => {
                                 <p>Border Countries: <div className="borders">
                                     {borders && borders.length > 0 ? (
                                         borders.map((border) => (
-                                            <ul key={border}>
+                                            <ul id='border' key={border}>
                                                 <li>{border}</li>
                                             </ul>
                                         ))

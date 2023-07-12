@@ -17,7 +17,7 @@
 
 img {
   max-width: 100%;
-  max-height: 100%;
+  /* max-height: 100%; */
   object-fit: cover;
 }
 
@@ -67,19 +67,25 @@ body.light-mode {
   color: var(--light-mode-text);
 }
 
-.header, .form, .countries {
+ .form, .countries {
   padding: 10px 50px;
 }
 
 /* Nav Bar */
 .header {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   align-items: center;
   justify-content: space-between;
   background-color: var(--article-color);
   color: var(--text-color);
   box-shadow: 0 5px 10px hsla(200, 15%, 8%, 0.1);
+  padding: 30px 20px;
+}
+
+.header p {
+  font-size: 18px;
+  font-weight: 600;
 }
 
 header.light-mode {
@@ -89,6 +95,13 @@ header.light-mode {
 
 .header i {
   cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .header p {
+    font-size: 32px;
+    font-weight: 900;
+  }
 }
 
 /* Search */
@@ -117,13 +130,39 @@ header.light-mode {
   margin: 0 0 30px;
 }
 
-.filter .form-control input::placeholder {
-  color: #fff;
+/* .filter .form-control input::placeholder {
+  color: black;
+} */
+
+.search-container {
+  position: relative;
 }
 
-.filter input.light-mode,
-.filter select.light-mode {
-  background-color: var(--light-mode-input);
+.search-container input[type="search"] {
+  padding-right: 30px;
+}
+
+.search-container i {
+  position: absolute;
+  top: 30%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+@media (min-width: 540px) {
+  .search-container i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+}
+
+
+.filter .form-control input.light-mode,
+.filter .filter-region select.light-mode {
+  background-color: #FFFFFF;
+  color: var(--light-mode-text);
 }
 
 .filter .filter-region .select {
@@ -158,8 +197,8 @@ header.light-mode {
   transition: background-color 0.4s;
 }
 
-.grid .info.light-theme {
-  background-color: var(--light-mode-bg);
+.grid .info.light-mode {
+  background-color: #FFFFFF;
   color: var(--light-mode-text);
 }
 

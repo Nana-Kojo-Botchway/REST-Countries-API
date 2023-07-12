@@ -43,7 +43,11 @@ const Search = () => {
     return (
         <section className="filter">
             <form className="form-control">
-                <input type="search" name="search" id="search" placeholder="Search Country" />
+                <div className="search-container">
+                    <input type="search" name="search" id="search" placeholder="Search Country" />
+                    <i className="fas fa-search" id='search-icon'></i>
+                </div>
+
             </form>
 
             <div className="filter-region">
