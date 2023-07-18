@@ -46,10 +46,9 @@
 
  .borders ul {
     margin: 10px;
-    /* background-color: var(--article-color); */
     border: 3px;
     padding: 3px 20px;
-    box-shadow: 0 5px 10px hsla(200, 10%, 6%, 0.5);
+    box-shadow: 0 1px 3px hsla(200, 10%, 6%, 0.5);
 }
 
 .borders ul.light-mode {

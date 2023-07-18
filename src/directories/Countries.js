@@ -1,37 +1,32 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 
-const url = "https://restcountries.com/v2/all";
+const url = "https://restcountries.com/v2/all"
 
 const Countries = () => {
-  const [countries, setCountries] = useState([]);
+  const [countries, setCountries] = useState([])
 
   useEffect(() => {
     const fetchCountryData = async () => {
-      const response = await fetch(url);
-      const countries = await response.json();
-      setCountries(countries);
-    };
+      const response = await fetch(url)
+      const countries = await response.json()
+      setCountries(countries)
+    }
 
-    fetchCountryData();
-  }, []);
-
-  // const removeCountry = (numericCode) => {
-  //     const newCountry = countries.filter((country) => country.numericCode !== numericCode)
-  //     setCountries(newCountry)
-  // }
+    fetchCountryData()
+  }, [])
 
   return (
     <>
       <section className="grid">
         {countries.map((country) => {
-          const { numericCode, name, population, region, capital, flag } = country;
+          const { numericCode, name, population, region, capital, flag } = country
 
           return (
-            <article key={numericCode}>
-              <div className="flag">
+            <article key={numericCode} className="container">
+              <div className="flag-container">
                 <Link to={`/countries/${encodeURIComponent(name)}`}>
-                  <img src={flag} alt={name} />
+                  <img src={flag} alt={name} className="flag-image" />
                 </Link>
               </div>
               <div className="info">
@@ -39,7 +34,7 @@ const Countries = () => {
                   {name}
                 </h4>
                 <h4>
-                  Populaion: <span>{population.toLocaleString()}</span>
+                  Population: <span>{population.toLocaleString()}</span>
                 </h4>
                 <h4 className="country-region">
                   Region: <span>{region}</span>
@@ -47,16 +42,13 @@ const Countries = () => {
                 <h4>
                   Capital: <span>{capital}</span>
                 </h4>
-                <div className="toggle">
-                  {/* <button className="btn" onClick={() => removeCountry(numericCode)}>Remove Country</button> */}
-                </div>
               </div>
             </article>
-          );
+          )
         })}
       </section>
     </>
-  );
-};
+  )
+}
 
-export default Countries;
+export default Countries
