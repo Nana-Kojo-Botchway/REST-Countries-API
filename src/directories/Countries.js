@@ -36,7 +36,7 @@ const Countries = () => {
               </div>
               <div className="info">
                 <h4 className="country-name">
-                  Name: <span>{name}</span>
+                  {name}
                 </h4>
                 <h4>
                   Populaion: <span>{population.toLocaleString()}</span>

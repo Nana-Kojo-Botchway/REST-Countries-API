@@ -139,13 +139,13 @@ header.dark-mode {
 }
 
 .search-container input[type="search"] {
-  padding-right: 30px;
+  padding: 15px 60px;
 }
 
 .search-container i {
   position: absolute;
   top: 30%;
-  right: 10px;
+  left: 10px;
   transform: translateY(-50%);
 }
 
@@ -153,8 +153,16 @@ header.dark-mode {
   .search-container i {
     position: absolute;
     top: 50%;
-    right: 10px;
+    left: 10px;
     transform: translateY(-50%);
+    color: var(--light-mode-input);
+    padding-left: 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  .filter .form-control input.search {
+    width: 450px;
   }
 }
 
@@ -208,6 +216,10 @@ header.dark-mode {
 
 .grid .info h4 span {
   font-weight: 300;
+}
+
+.grid .info h4.country-name {
+  margin-bottom: 20px;
 }
 
 @media (min-width: 640px) {
