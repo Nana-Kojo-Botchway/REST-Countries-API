@@ -183,13 +183,13 @@ header.dark-mode {
   transition: background-color 0.4s;
 }
 
-.container {
+/* .container {
   box-shadow: 0 1px 3px hsla(210, 4%, 78%, 0.5);
-}
+} */
 
 .grid .info {
   border-radius: 0 0 5px 5px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   margin: -10px 0 30px;
   padding: 20px;
   color: var(--light-mode-text);
