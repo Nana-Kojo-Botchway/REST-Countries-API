@@ -2,6 +2,10 @@
     padding: 50px;
 }
 
+.more-details img {
+  width: 100%;
+}
+
 .btn-light {
     margin: 50px 0 0 50px;
     display: inline-block;

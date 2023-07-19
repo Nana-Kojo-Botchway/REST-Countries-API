@@ -37,7 +37,7 @@ const Country = () => {
             <section className="country">
                 <article key={numericCode}>
                     <div className="more-details">
-                        <div className="flag">
+                        <div className="country-flag">
                             <img src={flag} alt={name} />
                         </div>
 
